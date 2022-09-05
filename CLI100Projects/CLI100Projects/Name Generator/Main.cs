@@ -16,7 +16,7 @@
 
             if (wantsLastName) { _lastName = Names.LastNames[rand.Next(0, Names.LastNames.Length)].ToLower(); }
 
-
+            
             char[] _carrier1 = _firstName.ToCharArray();
             _carrier1[0] = char.ToUpper(_carrier1[0]);
 
