@@ -6,7 +6,12 @@ namespace CLI100Projects
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(Projects.NameGenerator.GenerateName());
+            // Every interaction with possible CLI output can be called with Projects.[Name]...
+
+
+
+            Console.WriteLine(Projects.Main.En());
+
         }
     }
   
