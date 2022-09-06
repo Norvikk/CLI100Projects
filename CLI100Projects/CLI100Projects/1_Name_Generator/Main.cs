@@ -6,8 +6,8 @@
         {
             Random rand = new();
 
-            string _firstName = " ";
-            string _lastName = " ";
+            string _firstName = "";
+            string _lastName = "";
 
 
             if (isMale) { _firstName = Names.MaleNames[rand.Next(0, Names.MaleNames.Length)].ToLower(); }
