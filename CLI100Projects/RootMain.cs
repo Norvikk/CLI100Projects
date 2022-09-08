@@ -14,7 +14,7 @@ namespace CLI100Projects
             // Every interaction with possible CLI output can be called with Projects.[Name]...
 
 
-            Projects.DeEnCrypter.Encrypt("fffff", 123456789);
+            Projects.DeEnCrypter.Encrypt("fffff", "123456789");
             
 
         }

@@ -3,56 +3,23 @@
     internal static class DeEnCrypter
     {
         // More complex example of Character Obfuscation: https://github.com/Norvikk/Deenk
-        public static void Encrypt(string _payload, int _password)
+        // A simple Encryption Algorithm that can be reverse engineered  
+        public static void Encrypt(string _payload, string _password)
         {
-            // A simple Encryption Algorithm that can be reverse engineered  
-
-            if (_password.ToString().Length <= 8 || string.IsNullOrEmpty(_payload)) { throw new Exception("Password or Text are of subject to invalid sizing"); }
-           
-
-            int __possibleShuffles = 0;
-            List<string> __shufflePayload = new();
-
-           
-            char[] _text = _payload.ToCharArray();
-
             
 
-            foreach (char c in _text)
-            {
-                byte _byteText = Convert.ToByte(c);
+            if (_password.Length <= 8 || string.IsNullOrEmpty(_payload)) { throw new Exception("Password or Text are of subject to invalid sizing"); }
 
-                __possibleShuffles++;
-                __shufflePayload.Add(Convert.ToInt32(c).ToString());
-            }
+        
+            List<byte> _byteList = _payload.Select(x => Convert.ToByte(x)).ToList();
+            List<int> _intList = _password.Select(x => Convert.ToInt32(x.ToString())).ToList();
 
-            foreach (string key in __shufflePayload)
-            {
-                Console.WriteLine(key);
-            }
+            foreach (byte b in _byteList) { Console.WriteLine(b); }
+            foreach (int i in _intList) { Console.WriteLine(i); }
 
-            GenerateKeys(_password);
-        } 
-
-        public static int[] GenerateKeys(int password)
-        {
-            char[] _sequences = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
-
-            List<byte> _spunSequence = new();
-
-            foreach (char key in _sequences)
-            {
-                _spunSequence.Add(Convert.ToByte(key));
-                Console.WriteLine(Convert.ToByte(key));
-            }
-
-            //do some fuckery with the password and the byte number and call it a day
-
-
-            return null;
         }
 
+        
 
-       
     }
 }
