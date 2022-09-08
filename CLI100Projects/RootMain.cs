@@ -1,4 +1,9 @@
-﻿
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Security.Cryptography;
+global using System.Text;
+global using System.Threading.Tasks;
 
 namespace CLI100Projects
 {
@@ -9,8 +14,8 @@ namespace CLI100Projects
             // Every interaction with possible CLI output can be called with Projects.[Name]...
 
 
-
-            Console.WriteLine(Projects.Main.En());
+            Projects.DeEnCrypter.Encrypt("fffff", 123456789);
+            
 
         }
     }
