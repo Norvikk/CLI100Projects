@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace DeEnCrypter.Sequences
+﻿namespace DeEnCrypter.Sequences
 {
-    static class References
+    static class Tool
     {
         public static int InfinityLoop(int size, int currentRun)
         {
@@ -30,7 +28,7 @@ namespace DeEnCrypter.Sequences
 
            for (int i = 0; i < SA._byteList.Count; i++)
             {
-                Console.Write(Convert.ToChar(SA._byteList[i]) + ":" + SA._intList[References.InfinityLoop(SA._intList.Count, i)]+ "  ");
+                Console.Write(Convert.ToChar(SA._byteList[i]) + ":" + SA._intList[Tool.InfinityLoop(SA._intList.Count, i)]+ "  ");
             }
         
             
@@ -41,6 +39,7 @@ namespace DeEnCrypter.Sequences
             foreach (var a in SA._byteList) { Console.Write(a + ": "); }
             Console.WriteLine(" Sequence1 : Basic Modification + - *");
 
+            
             S2(); // Fragment III Iteration
             foreach (var a in SA._byteList) { Console.Write(a + ": "); }
             Console.WriteLine(" Sequence2");
@@ -48,16 +47,15 @@ namespace DeEnCrypter.Sequences
             S3();  // Reverses all non-nullable codes
             foreach (var a in SA._byteList) { Console.Write(a + ": "); }
             Console.WriteLine(" Sequence3 : Spun int around");
+            Console.WriteLine("485: 588: 297: 200: 404: 714: 824: 624: 210: 530: 642: 324: 218: 440: 777: 896:");
+
         }
 
         public static void S1()
         {
             for (int i = 0; i < SA._byteList.Count; i++)
             {
-                //SA._byteList[i] -= SA._intList[References.InfinityLoop(SA._intList.Count, i)];
-                SA._byteList[i] *= SA._intList[References.InfinityLoop(SA._intList.Count, i)];
-                //SA._byteList[i] += 5 * SA._intList[References.InfinityLoop(SA._intList.Count, i)];
-                // Console.WriteLine($"{SA._byteList[i]} + {SA._intList[References.InfinityLoop(SA._intList.Count, i)]} = {SA._byteList[i] += SA._intList[References.InfinityLoop(SA._intList.Count, i)]}");
+                SA._byteList[i] *= SA._intList[Tool.InfinityLoop(SA._intList.Count, i)];
             }
         }
         public static void S2()
@@ -72,15 +70,15 @@ namespace DeEnCrypter.Sequences
             {
                 try
                 {
-                    if ((SA._intList[References.InfinityLoop(SA._intList.Count, i)] % i) == 1) { SA._byteList[i] = ~SA._byteList[i]; }
+                    if ((SA._intList[Tool.InfinityLoop(SA._intList.Count, i)] % i) == 1) { SA._byteList[i] = ~SA._byteList[i]; }
                     else
                     {
                         if (!Convert.ToString(SA._byteList[i]).EndsWith("0"))
-                        { SA._byteList[i] = References.ReverseInt(SA._byteList[i]); }
+                        { SA._byteList[i] = Tool.ReverseInt(SA._byteList[i]); }
 
                         // Console.WriteLine(SA._byteList[i] + ":" + References.ReverseInt(SA._byteList[i]));
                     }
-                }
+                } // REVERSED MISERY DOESNT WORK
                 catch (DivideByZeroException) { };
             }
         }

@@ -1,5 +1,5 @@
 ﻿using DeEnCrypter.Sequences;
-using static DeEnCrypter.Sequences.Sequences;
+using DeEnCrypter.AntiSequences;
 
 namespace Projects
 {
@@ -24,7 +24,14 @@ namespace Projects
             public static string payload = "";
         }
 
-        
+        public static void Decrypt(string _payload, string _password)
+        {
+            if (_password.Length <= 8 || string.IsNullOrEmpty(_payload)) { throw new Exception("Password or Text are of subject to invalid sizing"); }
 
+            CommonRedistributables.payload = _payload;
+            CommonRedistributables.password = _password;
+
+            AntiSequences.AS0();
+        }
     }
 }
