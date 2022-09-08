@@ -9,12 +9,13 @@ namespace CLI100Projects
 {
     public class CLI100Projects
     {
+
         public static void Main(string[] args)
         {
             // Every interaction with possible CLI output can be called with Projects.[Name]...
 
 
-            Projects.DeEnCrypter.Encrypt("fffff", "123456789");
+            Projects.DeEnCrypter.Encrypt("abcdefghijklmnop", "563247862");
             
 
         }

@@ -1,4 +1,7 @@
-﻿namespace Projects
+﻿using DeEnCrypter.Sequences;
+using static DeEnCrypter.Sequences.Sequences;
+
+namespace Projects
 {
     internal static class DeEnCrypter
     {
@@ -6,17 +9,19 @@
         // A simple Encryption Algorithm that can be reverse engineered  
         public static void Encrypt(string _payload, string _password)
         {
-            
-
             if (_password.Length <= 8 || string.IsNullOrEmpty(_payload)) { throw new Exception("Password or Text are of subject to invalid sizing"); }
 
-        
-            List<byte> _byteList = _payload.Select(x => Convert.ToByte(x)).ToList();
-            List<int> _intList = _password.Select(x => Convert.ToInt32(x.ToString())).ToList();
+            CommonRedistributables.payload = _payload;
+            CommonRedistributables.password = _password;
 
-            foreach (byte b in _byteList) { Console.WriteLine(b); }
-            foreach (int i in _intList) { Console.WriteLine(i); }
 
+            Sequences.S0();
+        }
+
+        public static class CommonRedistributables
+        {
+            public static string password = "";
+            public static string payload = "";
         }
 
         
