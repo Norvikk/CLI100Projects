@@ -13,7 +13,7 @@ namespace CLI100Projects
         {
             // Every interaction with possible CLI output can be called with Projects.[Name]...
 
-            Projects.RockPaperScissors.Play();
+            Projects.Hangman.Play();
         }
     }
 }
