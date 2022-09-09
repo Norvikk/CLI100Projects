@@ -15,9 +15,19 @@
             {
                 _userInput = Convert.ToInt32(Console.ReadLine());
 
-                if (_userInput > _number) { Console.WriteLine("Lower!"); }
-                else if (_userInput == _number) { Console.WriteLine($"You won!. The number was {_number}"); break; }
-                else { Console.WriteLine("Higher!"); }
+                if (_userInput > _number)
+                {
+                    Console.WriteLine("Lower!");
+                }
+                else if (_userInput == _number)
+                {
+                    Console.WriteLine($"You won!. The number was {_number}");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Higher!");
+                }
             }
         }
 
