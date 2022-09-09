@@ -6,14 +6,16 @@ namespace Projects
     internal static class DeEnCrypter
     {
         // More complex example of Character Obfuscation: https://github.com/Norvikk/Deenk
-        // A simple Encryption Algorithm that can be reverse engineered  
+        // A simple Encryption Algorithm that can be reverse engineered
         public static void Encrypt(string _payload, string _password)
         {
-            if (_password.Length <= 8 || string.IsNullOrEmpty(_payload)) { throw new Exception("Password or Text are of subject to invalid sizing"); }
+            if (_password.Length <= 8 || string.IsNullOrEmpty(_payload))
+            {
+                throw new Exception("Password or Text are of subject to invalid sizing");
+            }
 
             CommonRedistributables.payload = _payload;
             CommonRedistributables.password = _password;
-
 
             Sequences.S0();
         }
@@ -26,7 +28,10 @@ namespace Projects
 
         public static void Decrypt(string _payload, string _password)
         {
-            if (_password.Length <= 8 || string.IsNullOrEmpty(_payload)) { throw new Exception("Password or Text are of subject to invalid sizing"); }
+            if (_password.Length <= 8 || string.IsNullOrEmpty(_payload))
+            {
+                throw new Exception("Password or Text are of subject to invalid sizing");
+            }
 
             CommonRedistributables.payload = _payload;
             CommonRedistributables.password = _password;
