@@ -6,7 +6,5 @@ using System.Threading.Tasks;
 
 namespace Kenny
 {
-    internal class Kenny
-    {
-    }
+    public static class Set {   }
 }

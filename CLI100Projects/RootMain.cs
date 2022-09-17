@@ -4,6 +4,7 @@ global using System.Linq;
 global using System.Security.Cryptography;
 global using System.Text;
 global using System.Threading.Tasks;
+global using System.Numerics;
 
 namespace CLI100Projects
 {
@@ -13,7 +14,9 @@ namespace CLI100Projects
         {
             // Every interaction with possible CLI output can be called with Projects.[Name]...
 
-            Console.WriteLine(Projects.PasswordGenerator.Generate());
+
+
+            
         }
     }
 }
