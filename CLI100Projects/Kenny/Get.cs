@@ -87,7 +87,7 @@ namespace Kenny
         }
 
         public static int _RandomSecureInt(int min, int max) =>
-            System.Security.Cryptography.RandomNumberGenerator.GetInt32(min, max + 1);
+            System.Security.Cryptography.RandomNumberGenerator.GetInt32(min, max);
 
         public static string _SecureRandomUpperString(int length)
         {
@@ -95,7 +95,7 @@ namespace Kenny
             return new string(
                 Enumerable
                     .Repeat(chars, length)
-                    .Select(s => s[_RandomSecureInt(0, s.Length)])
+                    .Select(s => s[_RandomSecureInt(0, s.Length )])
                     .ToArray()
             );
         }
@@ -122,13 +122,24 @@ namespace Kenny
             );
         }
 
+        public static string _SecureRandomAllString(int length)
+        {
+            const string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!#$%&()*.,-/:;><=?@[]^_'{]|";
+            return new string(
+                Enumerable
+                    .Repeat(chars, length)
+                    .Select(s => s[_RandomSecureInt(0, (s.Length - 1))])
+                    .ToArray()
+            );
+        }
+
         public static string _SecureRandomSymbol(int length)
         {
             const string chars = "!#$%&()*.,-/:;><=?@[]^_'{]|~ ";
             return new string(
                 Enumerable
                     .Repeat(chars, length)
-                    .Select(s => s[_RandomSecureInt(0, s.Length + 1)])
+                    .Select(s => s[_RandomSecureInt(0, s.Length)])
                     .ToArray()
             );
         }

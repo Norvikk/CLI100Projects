@@ -22,6 +22,10 @@ namespace Kenny
 
         public static void Sleep(int time) => System.Threading.Thread.Sleep(time);
 
+        public static void Clear() => Console.Clear();
+
+        public static void Space() => Console.WriteLine("\n");
+
         public static void ListW(List<string> list, string spacer = " ")
         {
             foreach (string item in list)
